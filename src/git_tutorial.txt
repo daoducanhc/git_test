@@ -1,0 +1,257 @@
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Try the new cross-platform PowerShell https://aka.ms/pscore6
+
+PS C:\Users\Admin\Dropbox\code\python\git_test> git init
+Initialized empty Git repository in C:/Users/Admin/Dropbox/code/python/git_test/.git/
+PS C:\Users\Admin\Dropbox\code\python\git_test> git add src/test1.py
+PS C:\Users\Admin\Dropbox\code\python\git_test> git commit -m "FIrst commit"
+
+
+
+
+
+
+*** Please tell me who you are.
+
+Run
+
+  git config --global user.email "you@example.com"
+
+to set your account's default identity.
+
+fatal: unable to auto-detect email address (got 'Ce@DANH.(none)')
+PS C:\Users\Admin\Dropbox\code\python\git_test> git config --global user.email "daoducanhc@gmail.com"
+PS C:\Users\Admin\Dropbox\code\python\git_test> git config --global user.name "DucAnh"
+PS C:\Users\Admin\Dropbox\code\python\git_test> git commit
+Aborting commit due to empty commit message.
+PS C:\Users\Admin\Dropbox\code\python\git_test> git commit -m "First commit"
+[master (root-commit) d163348] First commit
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+PS C:\Users\Admin\Dropbox\code\python\git_test> git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        .vscode/
+
+nothing added to commit but untracked files present (use "git add" to track)
+PS C:\Users\Admin\Dropbox\code\python\git_test> git log
+commit d1633485d9cf6f19efe65145f3e777491df916ce (HEAD -> master)
+Author: DucAnh <daoducanhc@gmail.com>
+Date:   Mon Jan 6 21:10:39 2020 +0700
+
+    First commit
+PS C:\Users\Admin\Dropbox\code\python\git_test> git add src/test1.py
+The file will have its original line endings in your working directory
+PS C:\Users\Admin\Dropbox\code\python\git_test> git status
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+
+Untracked files:
+        .vscode/
+
+PS C:\Users\Admin\Dropbox\code\python\git_test> git status
+        modified:   src/test1.py
+
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   src/test1.py
+
+Untracked files:
+        .vscode/
+
+PS C:\Users\Admin\Dropbox\code\python\git_test> git add .\src\test1.py
+warning: LF will be replaced by CRLF in src/test1.py.
+The file will have its original line endings in your working directory
+PS C:\Users\Admin\Dropbox\code\python\git_test> git commit -m "Second commit"
+[master 5d63ea7] Second commit
+ 1 file changed, 2 insertions(+)
+PS C:\Users\Admin\Dropbox\code\python\git_test> git add .
+The file will have its original line endings in your working directory
+[master 8f8d84f] update gitignore
+ 1 file changed, 1 insertion(+)
+st.git
+PS C:\Users\Admin\Dropbox\code\python\git_test> git remote -v
+origin  https://github.com/daoducanhc/git_test.git (push)
+fatal: The current branch master has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+
+Enumerating objects: 11, done.
+Counting objects: 100% (11/11), done.
+Writing objects: 100% (11/11), 761 bytes | 190.00 KiB/s, done.
+Total 11 (delta 0), reused 0 (delta 0)
+ * [new branch]      master -> master
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+* master
+PS C:\Users\Admin\Dropbox\code\python\git_test> git branch -a
+* master
+  remotes/origin/master
+PS C:\Users\Admin\Dropbox\code\python\git_test> git branch create
+PS C:\Users\Admin\Dropbox\code\python\git_test> git checkout master
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+PS C:\Users\Admin\Dropbox\code\python\git_test> git checkout -b testBranch
+Switched to a new branch 'testBranch'
+PS C:\Users\Admin\Dropbox\code\python\git_test> git branch
+  create
+  master
+PS C:\Users\Admin\Dropbox\code\python\git_test> git branch -d create
+Deleted branch create (was 8f8d84f).
+PS C:\Users\Admin\Dropbox\code\python\git_test> git branch
+  master
+PS C:\Users\Admin\Dropbox\code\python\git_test>
+PS C:\Users\Admin\Dropbox\code\python\git_test> git add .
+The file will have its original line endings in your working directory
+PS C:\Users\Admin\Dropbox\code\python\git_test> git commit -m "third commit"
+ 1 file changed, 1 insertion(+)
+PS C:\Users\Admin\Dropbox\code\python\git_test> git push -u origin testBranch
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (4/4), 335 bytes | 167.00 KiB/s, done.
+Total 4 (delta 0), reused 0 (delta 0)
+remote: Create a pull request for 'testBranch' on GitHub by visiting:
+remote:
+To https://github.com/daoducanhc/git_test.git
+ * [new branch]      testBranch -> testBranch
+Branch 'testBranch' set up to track remote branch 'testBranch' from 'origin'.
+git: 'add.' is not a git command. See 'git --help'.
+
+        add
+The file will have its original line endings in your working directory
+PS C:\Users\Admin\Dropbox\code\python\git_test> git commit -m "fourth commit"
+ 1 file changed, 1 insertion(+)
+PS C:\Users\Admin\Dropbox\code\python\git_test> git push origin testBranch
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (4/4), 341 bytes | 170.00 KiB/s, done.
+Total 4 (delta 0), reused 0 (delta 0)
+To https://github.com/daoducanhc/git_test.git
+   14675e7..de07a01  testBranch -> testBranch
+PS C:\Users\Admin\Dropbox\code\python\git_test> git merge master
+Already up to date.
+On branch testBranch
+
+nothing to commit, working tree clean
+Switched to branch 'master'
+Your branch is up to date with 'origin/master'.
+PS C:\Users\Admin\Dropbox\code\python\git_test> git checkout -b test2
+Switched to a new branch 'test2'
+PS C:\Users\Admin\Dropbox\code\python\git_test> git commit -m "fifth commit"
+[test2 21903ac] fifth commit
+ 1 file changed, 1 insertion(+)
+PS C:\Users\Admin\Dropbox\code\python\git_test> git push origin test2
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (4/4), 334 bytes | 167.00 KiB/s, done.
+Total 4 (delta 0), reused 0 (delta 0)
+remote:
+remote: Create a pull request for 'test2' on GitHub by visiting:
+remote:      https://github.com/daoducanhc/git_test/pull/new/test2
+remote:
+To https://github.com/daoducanhc/git_test.git
+ * [new branch]      test2 -> test2
+PS C:\Users\Admin\Dropbox\code\python\git_test> git merge master
+Already up to date.
+PS C:\Users\Admin\Dropbox\code\python\git_test> git checkout master
+Switched to branch 'master'
+Your branch is up to date with 'origin/master'.
+PS C:\Users\Admin\Dropbox\code\python\git_test> git merge test2
+Updating 8f8d84f..21903ac
+ src/test1.py | 1 +
+ 1 file changed, 1 insertion(+)
+PS C:\Users\Admin\Dropbox\code\python\git_test> git log
+commit 21903ac06f1f0d6cdf236aae7a85b27fdb7425bd (HEAD -> master, origin/test2, test2)
+Author: DucAnh <daoducanhc@gmail.com>
+
+    fifth commit
+
+Author: DucAnh <daoducanhc@gmail.com>
+Date:   Mon Jan 6 21:20:07 2020 +0700
+    update gitignore
+
+commit 5d63ea774f6974fe282de11f0451fb0b9c77251a
+Author: DucAnh <daoducanhc@gmail.com>
+Date:   Mon Jan 6 21:17:26 2020 +0700
+
+    Second commit
+
+commit d1633485d9cf6f19efe65145f3e777491df916ce
+Author: DucAnh <daoducanhc@gmail.com>
+Date:   Mon Jan 6 21:17:26 2020 +0700
+
+    Second commit
+
+commit d1633485d9cf6f19efe65145f3e777491df916ce
+Author: DucAnh <daoducanhc@gmail.com>
+Date:   Mon Jan 6 21:10:39 2020 +0700
+
+    First commit
+PS C:\Users\Admin\Dropbox\code\python\git_test> git status
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+
+nothing to commit, working tree clean
+PS C:\Users\Admin\Dropbox\code\python\git_test> git push
+Total 0 (delta 0), reused 0 (delta 0)
+To https://github.com/daoducanhc/git_test.git
+Switched to branch 'testBranch'
+Your branch is up to date with 'origin/testBranch'.
+PS C:\Users\Admin\Dropbox\code\python\git_test> git merge master
+Auto-merging src/test1.py
+CONFLICT (content): Merge conflict in src/test1.py
+Automatic merge failed; fix conflicts and then commit the result.
+PS C:\Users\Admin\Dropbox\code\python\git_test> git commit -m "merge master to testBranch"
+error: Committing is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+fatal: Exiting because of an unresolved conflict.
+PS C:\Users\Admin\Dropbox\code\python\git_test> git add .
+PS C:\Users\Admin\Dropbox\code\python\git_test> git status
+On branch testBranch
+Your branch is up to date with 'origin/testBranch'.
+
+All conflicts fixed but you are still merging.
+  (use "git commit" to conclude merge)
+
+Changes to be committed:
+        modified:   src/test1.py
+
+PS C:\Users\Admin\Dropbox\code\python\git_test> git commit -m "merge master to testBranch"
+[testBranch 509f183] merge master to testBranch
+PS C:\Users\Admin\Dropbox\code\python\git_test> git log
+Merge: de07a01 21903ac
+Author: DucAnh <daoducanhc@gmail.com>
+
+    merge master to testBranch
+
+commit 21903ac06f1f0d6cdf236aae7a85b27fdb7425bd (origin/test2, origin/master, test2, master)
+Date:   Mon Jan 6 21:45:24 2020 +0700
+
+    fifth commit
+
+commit de07a01263de0b1e378c441d08b5b51383c06d6f (origin/testBranch)
+PS C:\Users\Admin\Dropbox\code\python\git_test> git checkout master
+Switched to branch 'master'
+Your branch is up to date with 'origin/master'.
+PS C:\Users\Admin\Dropbox\code\python\git_test> git merge testBranch
+Updating 21903ac..509f183
+Fast-forward
+ src/test1.py | 1 +
+ 1 file changed, 1 insertion(+)
+PS C:\Users\Admin\Dropbox\code\python\git_test> git push origin master
+Enumerating objects: 10, done.
+Counting objects: 100% (10/10), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (4/4), 375 bytes | 375.00 KiB/s, done.
+Total 4 (delta 0), reused 0 (delta 0)
+To https://github.com/daoducanhc/git_test.git
+   21903ac..509f183  master -> master
+PS C:\Users\Admin\Dropbox\code\python\git_test>
